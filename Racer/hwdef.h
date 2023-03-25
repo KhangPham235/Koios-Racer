@@ -21,4 +21,9 @@
     #define M2_SPEED ARDUINO_UNO_D11
 
 #endif  // BOARD_L298P_SHIELD
+
+// define uart port to transfer data
+#define USBTX_PIN USBTX
+#define USBRX_PIN USBRX
+#define BAUD_DEFAULT 9600
 #endif  // HWDEF_H

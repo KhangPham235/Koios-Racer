@@ -4,8 +4,8 @@
 #include <stdint.h>
 #include "hwdef.h"
 
-#define MIN_PWN 0//500
-#define MAX_PWN 5000//2500
+#define MIN_PWN 500
+#define MAX_PWN 2500
 #define MIN_ANGLE 0     // degrees
 #define MAX_ANGLE 135   // degrees
 
@@ -14,6 +14,7 @@ public:
     // constructor
     KR_Servo(){
         _servo = new PwmOut(SERVO_PIN);
+        init();
     }
     void init();
 

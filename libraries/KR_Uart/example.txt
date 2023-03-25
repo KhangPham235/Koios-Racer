@@ -1,0 +1,19 @@
+#include "mbed.h"
+#include "KR_Mavlink/protocol/mavlink.h"
+#include "KR_Uart/KR_Uart.h"
+#include "stdint.h"
+
+mavlink_message_t msg;
+mavlink_kr_led_control_t led_control_msg;
+
+uint8_t data[MAVLINK_MSG_ID_KR_LED_CONTROL_LEN + 12];
+KR_Uart uart;
+int main()
+{
+  mavlink_msg_kr_led_control_encode(0, 0, &msg, &led_control_msg);
+  while (1)
+  {
+    uart.send_mavlink(&msg);
+    ThisThread::sleep_for(1000ms);
+  }
+}
