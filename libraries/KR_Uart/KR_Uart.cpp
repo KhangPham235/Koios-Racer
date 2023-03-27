@@ -15,7 +15,8 @@ void KR_Uart::send_mavlink(const mavlink_message_t* msg){
     _serial->write(_data, len);
 }
 
-void KR_Uart::recv(){
+ssize_t KR_Uart::recv_one_byte(uint8_t *data_recv_one_byte){ 
+    return _serial->read(data_recv_one_byte, 1);
 }
 
 void KR_Uart::set_baud(uint16_t value){

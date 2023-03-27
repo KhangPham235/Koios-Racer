@@ -17,7 +17,7 @@ public:
     void init();
     void send_debug(const uint8_t* msg);
     void send_mavlink(const mavlink_message_t* msg);
-    void recv();
+    ssize_t recv_one_byte(uint8_t *data_recv_one_byte);
     void set_baud(uint16_t value);
     void call_back(void (*func)(void));
     BufferedSerial *_serial;    

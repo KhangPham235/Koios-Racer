@@ -14,12 +14,18 @@ public:
     void init();
     void beep_on();
     void beep_off();
+    void set_status(uint8_t value);
+    void set_mode(uint8_t value);
     void beep_one_second();
     void toggle_beep();
     void set_duration(int duration);
+    void enable();
+    void disable();
+    bool is_enable();
 private:
     int _duration;
     DigitalOut *_buzzer;
+    bool _is_enable = true;
 };
 
 #endif
