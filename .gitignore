@@ -4,3 +4,5 @@ BUILD/
 cmake_build/
 mbed_app.json
 mbed-os/
+Linux/*
+libraries/KR_Mavlink/*
